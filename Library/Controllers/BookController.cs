@@ -1,4 +1,5 @@
 ﻿using Library.Models;
+using Library.Models.Queries;
 using Library.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -39,9 +40,14 @@ namespace Library.Controllers
 
         [Route("filter")]
         [HttpGet]
-        public IEnumerable<Book> GetFilteredBooks([FromQuery] string text, [FromQuery] int startYear, [FromQuery] int endYear)
+        public IEnumerable<Book> GetFilteredBooks([FromQuery] string text, [FromQuery] int? startYear, [FromQuery] int? endYear)
         {
-            return bookService.GetFilteredBooks(text, startYear, endYear);
+            return bookService.GetFilteredBooks(new BooksQuery
+            {
+                Text = text,
+                StartYear = startYear,
+                EndYear = endYear
+            });
         }
 
         [Route("books/genres")]

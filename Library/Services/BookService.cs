@@ -1,5 +1,6 @@
 ﻿using Library.Context;
 using Library.Models;
+using Library.Models.Queries;
 using Library.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -62,10 +63,23 @@ namespace Library.Services
            return context.Books.Where(book => book.AuthorId == authorId && book.Genre == genre);
         }
 
-        public IEnumerable<Book> GetFilteredBooks(string text, int startYear, int endYear)
+        public IEnumerable<Book> GetFilteredBooks(BooksQuery query)
         {
-            return context.Books.Where(book => book.Title.Contains(text) 
-                                       && book.Year >= startYear && book.Year <= endYear);
+            var books = context.Books.AsQueryable();
+            if (query.EndYear.HasValue)
+            {
+                books = books.Where(book => book.Year <= query.EndYear);
+            }
+            if (query.StartYear.HasValue)
+            {
+                books = books.Where(book => book.Year >= query.StartYear);
+            }
+            if (!string.IsNullOrEmpty(query.Text))
+            {
+                books = books.Where(book => book.Title.Contains(query.Text));
+            }
+
+            return books;
         }
 
 

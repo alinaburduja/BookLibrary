@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RnSUxj4BidU8HogtO68U+KtFVbITxbQUE+/uClZqVd5yUtiCRg75lxPsBiq25MeL06s40x27Id0p47d0sVBzfw==",
+  "dgSpecHash": "L3+DjyYgXZlH5m4OV9xyAk2DE3zCKxqvVCmzwA+/6oZsMAfaPKLQz4uNlSP68+dt5FZA7pZEfluYR9Pvi3YzNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anoth\\Desktop\\projects\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\anoth\\Desktop\\git\\BookLibrary\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anoth\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\anoth\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

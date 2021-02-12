@@ -1,4 +1,5 @@
 ﻿using Library.Models;
+using Library.Models.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Library.Services.Interfaces
 
         IEnumerable<Book> GetByAuthorId(Guid authorId, BookGenre genre);
 
-        IEnumerable<Book> GetFilteredBooks(string text, int startYear, int endYear);
+        IEnumerable<Book> GetFilteredBooks(BooksQuery query);
 
         List<List<Book>> ListOfListsWithBooks();
 
